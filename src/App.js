@@ -183,38 +183,10 @@ class App extends Component {
          
         </MapGL>
 
-        <div className='control-panel'>
-            
-          {/* <form id='params' onSubmit = {this.handleFormSubmit}> */}
-          {/* <h4>Chose a travel mode:</h4>
-                    
-          <label className='toggle-container'/>
-            <input 
-            name='profile' 
-            type='radio' 
-            value='walking'
-            onChange = {this.handleProfileChange}
-            checked={this.state.profile === 'walking'}
-            />
-      
-          <label className='toggle-container'>
-            <input name='profile' 
-            type='radio' 
-            value='cycling' 
-            checked={this.state.profile === 'cycling'}
-            onchange = {this.handleProfileChange}>
-
-            </input>
-            <div className='toggle toggle--active-null toggle--null'>Cycling</div>
-          </label> */}
-
-
-          {/* </form> */}
-            
-
-          
+        <div className='sidebar'>
+         
           <h4>Maximum Travel Time:</h4>
-          <label className='toggle-container'>{this.state.minutes} mins. </label>
+          <label>{this.state.minutes} mins. </label>
             <input 
               name='time' 
               type='range' 
