@@ -55,10 +55,6 @@
 /* @media screen and (min-width: 800px) .h-auto-ml */
 
 
-
-
-
-
 .control-panel {
   position: absolute;
   top: 0;
@@ -76,16 +72,6 @@
   text-transform: uppercase;
 }
 
-.react-switch-checkbox {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
-  left: calc(100% - 2px);
-  transform: translateX(-100%);
-}
 
 .react-switch-label:active .react-switch-button {
   width: 60px;

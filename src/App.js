@@ -1,20 +1,10 @@
-//import 'mapbox-gl/dist/mapbox-gl.css';
-
 import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import React, {Component} from 'react';
-//import Geocoder from 'react-mapbox-gl-geocoder';
 import Geocoder from "react-map-gl-geocoder";
-//import ReactMapGL, {Layer,Source} from 'react-map-gl';
 import MapGL, {Source, Layer,Marker,NavigationControl} from 'react-map-gl';
-import {json as requestJson} from 'd3-request';
 //import Geocoder from '@mapbox/react-geocoder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import {fawalking} from '@fortawesome/free-solid-svg-icons';
 import {faBiking,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
-//import InputRange from 'react-input-range';
-
-//import DeckGL, { GeoJsonLayer } from "deck.gl";
 import { GeoJsonLayer } from "deck.gl";
 import './App.css';
 
@@ -148,11 +138,7 @@ class App extends Component {
           //onViewportChange={this._updateViewport}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       >
-        {/* <div className='navStyle'>
-          <NavigationControl onViewportChange={this._updateViewport} />
-        </div> */}
 
-        
           <Geocoder 
               mapRef={this.mapRef}
               onResult={this.handleOnResult}
@@ -160,45 +146,40 @@ class App extends Component {
               mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
               position="top-left"
             />
-            {/* <DeckGL {...viewport} layers={[searchResultLayer]} /> */}
-            
-       
-        
 
-        <Marker
-          longitude={viewport.longitude}
-          latitude={viewport.latitude}
-          offsetTop={-20}
-          offsetLeft={-10}
-          //draggable
-          onDragStart={this._onMarkerDragStart}
-          onDrag={this._onMarkerDrag}
-          //onDragEnd={this._onMarkerDragEnd}
-          onViewportChange = {(viewport) => this.setState({viewport})}
-
-        >
-          <FontAwesomeIcon icon={this.state.faIcon} size='2x' color='blue' />
-
-        </Marker>
+          <Marker
+            longitude={viewport.longitude}
+            latitude={viewport.latitude}
+            offsetTop={-20}
+            offsetLeft={-10}
+            //draggable
+            onDragStart={this._onMarkerDragStart}
+            onDrag={this._onMarkerDrag}
+            //onDragEnd={this._onMarkerDragEnd}
+            onViewportChange = {(viewport) => this.setState({viewport})}
+          >
+          <FontAwesomeIcon icon={faMapMarkerAlt} size='2x' color='blue' />
+          
+          </Marker>
  
-        <Source 
-        id = 'iso'
-        type = 'geojson'
-        data = {urlBase + this.state.profile + '/' + 
-                viewport.longitude + ',' + viewport.latitude + 
-                  '?contours_minutes=' + this.state.minutes + '&polygons=true&access_token=' + 
-                  process.env.REACT_APP_MAPBOX_TOKEN} >
+          <Source 
+          id = 'iso'
+          type = 'geojson'
+          data = {urlBase + this.state.profile + '/' + 
+                  viewport.longitude + ',' + viewport.latitude + 
+                    '?contours_minutes=' + this.state.minutes + '&polygons=true&access_token=' + 
+                    process.env.REACT_APP_MAPBOX_TOKEN} >
         
-        <Layer 
-        type="fill"
-        layout={{}}
-        source = 'iso'
-        paint = {{
-          'fill-color': '#007AFB',//'#5a3fc0',
-          'fill-opacity': 0.3
-          }}/>
-        
-        </Source>
+            <Layer 
+            type="fill"
+            layout={{}}
+            source = 'iso'
+            paint = {{
+              'fill-color': '#007AFB',//'#5a3fc0',
+              'fill-opacity': 0.3
+              }}/>
+            
+            </Source>
          
         </MapGL>
 
