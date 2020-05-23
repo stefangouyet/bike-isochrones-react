@@ -197,18 +197,6 @@ class App extends Component {
               onChange={this.handleTimeChange}
               step = "5"
             />
-          {/* <label> Toggle Middle Icon </label>
-
-          {/* <form onSubmit={this.handleSubmit}> */}
-          {/* <Select 
-          value={this.state.faIcon} 
-          onChange={this.handleIconChange}
-          options = {faBiking, faMapMarkedAlt}
-          >
-            <option value={faBiking}>faBiking</option>
-            <option value={{faMapMarkedAlt}}>faMapMarkedAlt</option>
-          </Select> */} 
-          {/* </form> */}
 
           
 
