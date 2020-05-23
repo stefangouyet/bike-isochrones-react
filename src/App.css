@@ -1,0 +1,100 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* viewport-third h-auto-ml hmax-full bg-gray-dark prose--dark round-ml shadow-lighten25 scroll-auto */
+.viewport-third {
+  position: relative;
+  padding:30px;
+  text-align:left;
+  height: 33.3333vh!important;
+  box-shadow: 0 0 10px 2px hsla(0,0%,100%,.25)!important;
+  color:white;
+  background-color: #333!important;
+  height: auto!important;
+  width:25%;
+  
+}
+
+/* @media screen and (min-width: 800px) .h-auto-ml */
+
+
+
+
+
+
+.control-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width:250px;
+  max-width: 360px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 14px 28px;
+  margin: 25px;
+  font-size: 13px;
+  line-height: 2;
+  color: #6b6b76;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.react-switch-checkbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.react-switch-checkbox:checked + .react-switch-label .react-switch-button {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.react-switch-label:active .react-switch-button {
+  width: 60px;
+}
+
+
+.navStyle  {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+};
