@@ -12,7 +12,7 @@ const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN;
 
 const urlBase =  'https://api.mapbox.com/isochrone/v1/mapbox/';
 
-const mapStyle = 'mapbox://styles/andregoo/ckahcb1sp02im1ikgfsefbboi'
+const mapStyle = 'mapbox://styles/andregoo/ckaorucr10m0i1ixhn5biwjrr'
 
 class App extends Component {
  
