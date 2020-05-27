@@ -23,7 +23,7 @@ class App extends Component {
       viewport: { 
         latitude: 38.907,
         longitude: -77.036,
-        zoom: 10,
+        zoom: 11,
         maxZoom:15
       },
       isLoaded:true,
@@ -35,8 +35,6 @@ class App extends Component {
       faIcon: faMapMarkerAlt
        };
 
-       
-    
 
     mapRef = React.createRef();
 
@@ -79,51 +77,28 @@ class App extends Component {
   };
 
   handleTimeChange = event => {
-    console.log(event.target.value);
     this.setState({
       minutes:event.target.value
     })
   }
-  //handleTimeChange = this.handleTimeChange.bind(this);
-
+  
   handleProfileChange = event => {
-    //console.log(event.target.value);
     this.setState({
       profile:event.target.value
     })
     console.log(this.state.profile)
   }
   handleIconChange = selectedOption => {
-    //console.log(event.target.value);
     this.setState({
       faIcon: selectedOption
     });
   }
-  //handleIconChange = this.handleIconChange.bind(this);
 
  
   render() {
     
-    
-
-    var query =  (urlBase + this.state.profile + '/' + 
-                  this.state.viewport.longitude + ',' + this.state.viewport.latitude + 
-                  '?contours_minutes=' + this.state.minutes + '&polygons=true&access_token=' + 
-                  MAPBOX_TOKEN);
-                  
-    // console.log(this.state);
-    // console.log('url is: ' + urlBase + this.state.profile + '/' + 
-    // this.state.viewport.longitude + ',' + this.state.viewport.latitude + 
-    // '?contours_minutes=' + this.state.minutes + '&polygons=true&access_token=' + 
-    // process.env.REACT_APP_MAPBOX_TOKEN);
-    
-    
-   // const {viewport} = this.state
-   const { viewport, searchResultLayer } = this.state;
-
-
-
-            
+    const { viewport } = this.state;
+   
     return (
       
       <div style={{height:"100vh"}}> 
@@ -175,7 +150,7 @@ class App extends Component {
             layout={{}}
             source = 'iso'
             paint = {{
-              'fill-color': '#007AFB',//'#5a3fc0',
+              'fill-color': '#007AFB',
               'fill-opacity': 0.3
               }}/>
             
@@ -193,7 +168,6 @@ class App extends Component {
               min={15} 
               max={60}
               defaultValue={30}
-              //value={this.state.minutes}
               onChange={this.handleTimeChange}
               step = "5"
             />
