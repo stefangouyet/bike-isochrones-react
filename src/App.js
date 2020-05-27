@@ -8,13 +8,10 @@ import {faBiking,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
 import { GeoJsonLayer } from "deck.gl";
 import './App.css';
 
- 
-
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN;
 
 const urlBase =  'https://api.mapbox.com/isochrone/v1/mapbox/';
 
-//const mapStyle= "mapbox://styles/stefangouyet/ck8v4xh0j20001jm6a1wlo41g"
 const mapStyle = 'mapbox://styles/andregoo/ckahcb1sp02im1ikgfsefbboi'
 
 class App extends Component {
@@ -30,13 +27,12 @@ class App extends Component {
       items:null,
       profile: 'cycling', 
       minutes: 30,
-      events: {},
       searchResultLayer: null,
       faIcon: faMapMarkerAlt
        };
 
 
-    mapRef = React.createRef();
+  mapRef = React.createRef();
 
   _updateViewport = viewport => {
     this.setState({viewport});
@@ -51,7 +47,7 @@ class App extends Component {
   onSelected = (viewport, item) => {
     this.setState({viewport});
     console.log('Selected: ', item)
-  }
+  };
 
   handleGeocoderViewportChange = viewport => {
     const geocoderDefaultOverrides = { transitionDuration: 1500 };
@@ -79,20 +75,20 @@ class App extends Component {
   handleTimeChange = event => {
     this.setState({
       minutes:event.target.value
-    })
-  }
+    });
+  };
   
   handleProfileChange = event => {
     this.setState({
       profile:event.target.value
-    })
-    console.log(this.state.profile)
-  }
+    });
+  };
+
   handleIconChange = selectedOption => {
     this.setState({
       faIcon: selectedOption
     });
-  }
+  };
 
  
   render() {
@@ -110,7 +106,6 @@ class App extends Component {
           {...viewport}
           onViewportChange={this.handleViewportChange}
           mapStyle={mapStyle}
-          //onViewportChange={this._updateViewport}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
       >
 
@@ -130,11 +125,9 @@ class App extends Component {
             //draggable
             onDragStart={this._onMarkerDragStart}
             onDrag={this._onMarkerDrag}
-            //onDragEnd={this._onMarkerDragEnd}
             onViewportChange = {(viewport) => this.setState({viewport})}
           >
           <FontAwesomeIcon icon={faMapMarkerAlt} size='2x' color='blue' />
-          
           </Marker>
  
           <Source 
@@ -154,7 +147,7 @@ class App extends Component {
               'fill-opacity': 0.3
               }}/>
             
-            </Source>
+          </Source>
          
         </MapGL>
 
@@ -171,12 +164,9 @@ class App extends Component {
               onChange={this.handleTimeChange}
               step = "5"
             />
-
-          
-
-          </div>
-        
         </div>
+        
+      </div>
      
     );
   }
