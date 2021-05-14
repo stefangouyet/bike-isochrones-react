@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="Group_3008" data-name="Group 3008" transform="translate(-1232 -273.898)">
+    <g id="exclamation" transform="translate(1232 273.898)">
+      <g id="Group_3003" data-name="Group 3003">
+        <g id="Group_3002" data-name="Group 3002">
+          <path id="Path_3677" data-name="Path 3677" d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0Z" fill="#b9b9b9"/>
+        </g>
+      </g>
+      <g id="Group_3005" data-name="Group 3005" transform="translate(7.267 3.363)">
+        <g id="Group_3004" data-name="Group 3004" transform="translate(0 0)">
+          <path id="Path_3678" data-name="Path 3678" d="M236.733,128.877a.733.733,0,0,0-.733.733v4.717a.733.733,0,1,0,1.465,0V129.61A.733.733,0,0,0,236.733,128.877Z" transform="translate(-236 -128.877)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Group_3007" data-name="Group 3007" transform="translate(7.011 10.442)">
+        <g id="Group_3006" data-name="Group 3006" transform="translate(0 0)">
+          <ellipse id="Ellipse_1395" data-name="Ellipse 1395" cx="0.989" cy="0.989" rx="0.989" ry="0.989" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

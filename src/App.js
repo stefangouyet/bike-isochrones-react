@@ -2,13 +2,13 @@ import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import React, {Component} from 'react';
 import Geocoder from "react-map-gl-geocoder";
 import MapGL, {Source, Layer,Marker,NavigationControl} from 'react-map-gl';
-//import Geocoder from '@mapbox/react-geocoder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faBiking,faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
+import {faMapMarkerAlt} from '@fortawesome/free-solid-svg-icons';
 import { GeoJsonLayer } from "deck.gl";
 import './App.css';
+import { Tooltip } from '@material-ui/core';
 
-const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN;
+import IconInstruction from "./icon-instruction.svg"
 
 const urlBase =  'https://api.mapbox.com/isochrone/v1/mapbox/';
 
@@ -33,18 +33,6 @@ class App extends Component {
 
 
   mapRef = React.createRef();
-
-  // debounce = (a,b,c) => {
-  //   var d,e;
-  //   return function(){
-  //     function h(){
-  //       d = null,c|| (e=a.apply(f,g))
-  //     }
-  //     var f = this, g = arguments;
-  //     return clearTimeout(d),
-  //     d = setTimeout(h,b), c&&!d&&(e=a.apply(f,g)),e
-  //   }
-  // };
 
   _updateViewport = viewport => {
     this.setState({viewport});
@@ -164,8 +152,15 @@ class App extends Component {
         </MapGL>
 
         <div className='sidebar'>
+         <h4>Isochrones and Cycling&nbsp;
+           <Tooltip 
+           placement='top'
+           title={
+           <h4>Drag the map to see changes</h4>}>
+           <img src={IconInstruction} alt="img" /></Tooltip>
+         </h4>
          
-          <h4>Maximum Travel Time:</h4>
+          <h5>Travel Time:</h5>
           <label>{this.state.minutes} mins. </label>
             <input 
               name='time' 
